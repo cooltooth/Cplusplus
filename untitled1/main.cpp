@@ -1,5 +1,4 @@
-/*
- * THE AXE
+/* THE AXE
  * *      *
  * ** ** **
  * ********
@@ -13,6 +12,7 @@
  */
 
 #include <iostream>
+using std::streamsize;
 #include <limits>
 using std::cout;
 using std::cin;
@@ -22,7 +22,7 @@ int main() {
 
     int bladeHeight;
 
-    while (1)
+    for (;;)
     {
         cout << "Please enter blade height: ";
         cin >> bladeHeight;
@@ -32,7 +32,7 @@ int main() {
         }else{
             cout << "Please enter a valid positive integer" << endl;
             cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
         }
     }
 
@@ -40,7 +40,7 @@ int main() {
     bool handleTrigger  = false;                    // Trigger for handle...
     int  handleCounter  = 0;                        // Tracker for handle length.
 
-    for(int r=1; r > 0 || handleCounter < 10; mid ? r-- : r++)
+    for(int r=0; r >= 0 || handleCounter < 10; mid ? r-- : r++)
     {
         bool halfPoint = false;
 
@@ -75,7 +75,7 @@ int main() {
     return 0;
 }
 
-/*  Alternative multi-loop version
+/*  Alternative triple-loop version
  *
  * for(int r=1;r>0 || handleEnd<10;(mid)?r--:r++){
         // Flip blade building direction when mid point is reached
@@ -119,6 +119,9 @@ int main() {
 
 
 /* FIZZBUZZ
+ * for(int i=1; i<=100; i%3 && i%5?std::cout<<i<<'\n':i%3?std::cout<<"buzz\n":i%5?std::cout<<"fizz\n":std::cout<<"fizzbuzz\n",i++);
+ */
+ /*
 int main(){
 
     for(int i=1; i<=100;i++){
@@ -135,25 +138,26 @@ int main(){
             std::cout<<i;
 
         std::cout<<std::endl;
-
     }
 
     char x;
     std::cin>>x;
-}*/
+    return 0;
+}
+ */
 
 
 
 /* Reverse a string or sentence
 int main(){
     std::string string = "canada likes dogs";
-    std::string temp   = "";
+    std::string reverseString   = "";
 
     for(int i=0;i<=string.length();i++){
-        temp.append(string,(string.length()-i),1);
+        reverseString.append(string,(string.length()-i),1);
     }
 
-    std::cout<<temp;
+    std::cout<<reverseString;
     return 0;
 }
 */
@@ -226,7 +230,7 @@ int main(){
 */
 /*
  * Return distinct values and their counts (i.e. the list above becomes "1(3) 3(3) 5(2) 7(1)")
- *
+ *//*
 
 #include <vector>
 using std::vector;
@@ -258,7 +262,6 @@ int main() {
         vectorArray.push_back({x,count});
     }
 
-
     for(auto x : vectorArray){
         cout<<x[0]<<"("<<x[1]<<") ";
     }
@@ -286,7 +289,6 @@ int main() {
 
     // Need temporary string in order to check if a push back is needed
     string temp;
-
 
     // Put all values into a string vector split by comma
     while (getline(stringFull, temp, ','))
@@ -321,7 +323,7 @@ int main() {
 */
 /*
  * Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1. to 1000 digits
- *
+ *//*
 
 int main(){
 
