@@ -9,6 +9,8 @@
 /cygdrive/c/Users/Daniel Hazelton/CLionProjects/untitled1/main.cpp
 iostream
 -
+limits
+-
 array
 -
 vector
@@ -21,6 +23,10 @@ algorithm
 -
 array
 -
-string
+vector
+-
+sstream
+-
+algorithm
 -
 
