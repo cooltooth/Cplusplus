@@ -9,15 +9,18 @@
  *    **
  *    **
  * Can I get it into 1 loop?
+ * Apparently I can.
  */
+
 
 #include <iostream>
 using std::streamsize;
-#include <limits>
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+#include <limits>
+using std::numeric_limits;
 
 int main() {
 
@@ -29,40 +32,34 @@ int main() {
         cout << "Please enter blade height: ";
         cin  >> bladeHeight;
 
-        if(bladeHeight>0) {
+        if(bladeHeight>0 && bladeHeight<2147483647) { // range(0,INTMAX_MAX-1)
             break;
-        }else{
+        } else {
             cout << "Please enter a valid positive integer" << endl;
             cin.clear();
-            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     }
 
-
     int  row            = 0;                        // Row counter, VERY CRITICAL
     int  handleCounter  = 0;                        // Tracker for handle length.
-    int  rotary         = 0;                        // Fake Tri-bool (0,1,2)
+    int  triBool        = 0;                        // Fake Tri-bool (0,1,2)
 
     int  bladeWidth     = (bladeHeight/2)+1;        // Not exactly necessary but helps legibility
 
     bool mid            = false;                    // Tracker for mid point of blade.
 
-
-
     while(row >= 0 || handleCounter < 10)
     {
-        if(row >= bladeWidth)    //Flip blade print ++/--
-        {
+        if(row >= bladeWidth)    // Flip blade build direction ++/--
             mid = true;
-        }
 
-
-        switch(rotary){
-
+        switch(triBool)
+        {
             case 0:                         // LEFT BLADE
                 cout << string(row, '*');
                 cout << string(bladeWidth-row,' ');
-                rotary++;
+                triBool++;
                 break;
 
             case 1:                         // HANDLE
@@ -72,31 +69,20 @@ int main() {
                 } else {
                     cout << "  ";
                 }
-                rotary++;
+                triBool++;
                 break;
 
             case 2:                         // RIGHT BLADE
                 cout << string(bladeWidth-row,' ');
                 cout << string(row, '*');
-                mid ? (row==0 && handleCounter < 10)? : --row : ++row;
-                cout<<endl;
-                rotary -=2;
+                mid ? ((row==0 && handleCounter < 10)? : --row) : ++row; // Brackets added for legibility
+                cout << endl;
+                triBool = 0;
                 break; // Next row
         }
     }
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 *
