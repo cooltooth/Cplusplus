@@ -8,7 +8,7 @@
  *    **
  *    **
  *    **
- * Also, screw you even numbers
+ * Can I get it into 1 loop?
  */
 
 #include <iostream>
@@ -17,15 +17,138 @@ using std::streamsize;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::string;
 
 int main() {
 
     int bladeHeight;
 
+    // input validation, not part of the build loop
     for (;;)
     {
         cout << "Please enter blade height: ";
-        cin >> bladeHeight;
+        cin  >> bladeHeight;
+
+        if(bladeHeight>0) {
+            break;
+        }else{
+            cout << "Please enter a valid positive integer" << endl;
+            cin.clear();
+            cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+        }
+    }
+
+
+    int  row            = 0;                        // Row counter, VERY CRITICAL
+    int  handleCounter  = 0;                        // Tracker for handle length.
+    int  rotary         = 0;                        // Fake Tri-bool (0,1,2)
+
+    int  bladeWidth     = (bladeHeight/2)+1;        // Not exactly necessary but helps legibility
+
+    bool mid            = false;                    // Tracker for mid point of blade.
+
+
+
+    while(row >= 0 || handleCounter < 10)
+    {
+        if(row >= bladeWidth)    //Flip blade print ++/--
+        {
+            mid = true;
+        }
+
+
+        switch(rotary){
+
+            case 0:                         // LEFT BLADE
+                cout << string(row, '*');
+                cout << string(bladeWidth-row,' ');
+                rotary++;
+                break;
+
+            case 1:                         // HANDLE
+                if (row == bladeHeight / 2 || (handleCounter >= 1 && handleCounter < 10)) {
+                    cout << "**";
+                    ++handleCounter;
+                } else {
+                    cout << "  ";
+                }
+                rotary++;
+                break;
+
+            case 2:                         // RIGHT BLADE
+                cout << string(bladeWidth-row,' ');
+                cout << string(row, '*');
+                mid ? (row==0 && handleCounter < 10)? : --row : ++row;
+                cout<<endl;
+                rotary -=2;
+                break; // Next row
+        }
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+*
+* Axe with 2 loops
+
+        if(r >= (bladeHeight / 2) + 1)
+            mid = true;
+
+        for(int c=0; c>=0; halfPoint ? --c : ++c)
+        {
+            cout << (c < r ? '*' : ' ');
+
+            if(c == bladeHeight / 2 && !halfPoint)
+            {
+                halfPoint       = true;
+                handleTrigger   = true;
+                ++c;
+            }
+
+            if (handleTrigger)
+            {
+                // Handle check, row is Bladeheight/2(int rounding) and handle hasn't started/ended yet
+                if (r == bladeHeight / 2 || handleCounter >= 1 && handleCounter < 10) {
+                    cout << "**";
+                    handleCounter++;
+                } else {
+                    cout << "  ";
+                }
+                handleTrigger = false;
+            }
+        }
+    }
+    return 0;
+}
+*/
+
+
+
+
+
+/*
+ * Axe with 4 loops
+ *
+int main() {
+
+    int bladeHeight;
+
+    // input validation, not part of the build loop
+    for (;;)
+    {
+        cout << "Please enter blade height: ";
+        cin  >> bladeHeight;
 
         if(bladeHeight>0) {
             break;
@@ -40,14 +163,14 @@ int main() {
     bool handleTrigger  = false;                    // Trigger for handle...
     int  handleCounter  = 0;                        // Tracker for handle length.
 
-    for(int r=0; r >= 0 || handleCounter < 10; mid ? r-- : r++)
+    for(int r=0; r >= 0 || handleCounter < 10; mid ? --r : ++r) // set int r=1; to remove initial line
     {
         bool halfPoint = false;
 
         if(r >= (bladeHeight / 2) + 1)
             mid = true;
 
-        for(int c=0; c>=0; halfPoint ? --c : c++)
+        for(int c=0; c>=0; halfPoint ? --c : ++c)
         {
             cout << (c < r ? '*' : ' ');
 
@@ -55,7 +178,7 @@ int main() {
             {
                 halfPoint       = true;
                 handleTrigger   = true;
-                c++;
+                ++c;
             }
 
             if (handleTrigger)
