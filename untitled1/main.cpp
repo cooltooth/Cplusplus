@@ -27,7 +27,7 @@ int main() {
     int bladeHeight;
 
     // input validation, not part of the build loop
-    for (;;)
+    for(;;)
     {
         cout << "Please enter blade height: ";
         cin  >> bladeHeight;
@@ -59,7 +59,7 @@ int main() {
             case 0:                         // LEFT BLADE
                 cout << string(row, '*');
                 cout << string(bladeWidth-row,' ');
-                triBool++;
+                ++triBool;
                 break;
 
             case 1:                         // HANDLE
@@ -69,7 +69,7 @@ int main() {
                 } else {
                     cout << "  ";
                 }
-                triBool++;
+                ++triBool;
                 break;
 
             case 2:                         // RIGHT BLADE
