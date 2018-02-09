@@ -1,0 +1,120 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigInteger.hh
+BigUnsigned.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigUnsigned.hh
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigIntegerAlgorithms.hh
+BigInteger.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigInteger.hh
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigIntegerLibrary.hh
+NumberlikeArray.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/NumberlikeArray.hh
+BigUnsigned.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigUnsigned.hh
+BigInteger.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigInteger.hh
+BigIntegerAlgorithms.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigIntegerAlgorithms.hh
+BigUnsignedInABase.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigUnsignedInABase.hh
+BigIntegerUtils.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigIntegerUtils.hh
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigIntegerUtils.hh
+BigInteger.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigInteger.hh
+string
+-
+iostream
+-
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigUnsigned.hh
+NumberlikeArray.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/NumberlikeArray.hh
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigUnsignedInABase.hh
+NumberlikeArray.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/NumberlikeArray.hh
+BigUnsigned.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigUnsigned.hh
+string
+-
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/NumberlikeArray.hh
+
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/main.cpp
+iostream
+-
+vector
+-
+iostream
+-
+BigIntegerLibrary.hh
+/cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/BigIntegerLibrary.hh
+iostream
+-
+iostream
+-
+vector
+-
+sstream
+-
+iostream
+-
+vector
+-
+iostream
+-
+iostream
+-
+iostream
+-
+math.h
+-
+iostream
+-
+algorithm
+-
+iostream
+-
+iostream
+-
+iostream
+-
+iostream
+-
+algorithm
+-
+iostream
+-
+iostream
+-
+limits
+-
+array
+-
+vector
+-
+algorithm
+-
+vector
+-
+algorithm
+-
+array
+-
+vector
+-
+sstream
+-
+algorithm
+-
+

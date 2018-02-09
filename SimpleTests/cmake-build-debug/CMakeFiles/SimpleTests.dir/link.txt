@@ -1,0 +1,1 @@
+C:/cygwin64/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/SimpleTests.dir/main.cpp.o  -o SimpleTests.exe -Wl,--out-implib,libSimpleTests.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
