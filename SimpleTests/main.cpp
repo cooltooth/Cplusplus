@@ -1,4 +1,4 @@
-
+// thi of q = q/(1-q-q^2) <- inveres of that.
 /* 23, painfully slow, online versions can get it in 3 seconds..
  *
  * #include <iostream>
