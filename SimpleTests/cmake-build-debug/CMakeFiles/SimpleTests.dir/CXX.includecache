@@ -53,7 +53,7 @@ string
 /cygdrive/c/Users/Daniel Hazelton/CLionProjects/SimpleTests/main.cpp
 iostream
 -
-set
+cmath
 -
 vector
 -
